@@ -1,0 +1,38 @@
+
+
+
+---------------------------------------------------------
+Account
+---------------------------------------------------------
+number             ==> int
+balance  		    ==> double
+
+
+---------------------------------------------------------
+Transaction
+---------------------------------------------------------
+id						==>int
+date-time			==>datetime
+amount             ==>double
+debit/credit       ==>boolean
+
+
+
+
+_________________________________________________________
+_________________________________________________________
+
+db
+				->ConnectionFactory
+	
+entity
+				->Account
+				->Transaction
+			
+repository
+				->JdbcAccountRepository
+				->JdbcTransactionRepository
+				->AccountRepository
+				->TransactionRepository
+				->DurationFilter
+				
