@@ -1,5 +1,11 @@
 package project0.repository;
 
-public class AccountRepository {
+import java.util.List;
 
+import project0.entity.Account;
+
+public interface AccountRepository {
+	
+	List<Account> getAccounts();
+	
 }

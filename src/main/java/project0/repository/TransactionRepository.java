@@ -1,5 +1,9 @@
 package project0.repository;
 
-public class TransactionRepository {
+import project0.entity.Transaction;
+
+public interface TransactionRepository {
+	
+	public void insert(Transaction transaction);
 
 }
