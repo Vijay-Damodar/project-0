@@ -31,4 +31,31 @@ public class JdbcTransactionRepository implements TransactionRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+//	@Override
+//	public void save(double amount, Account fromAccount, Account toAccount) {
+//		Connection connection = null;
+//		try {
+//			connection = ConnectionFactory.getConnection();
+//
+//			String sql = "insert into transaction(amount, debAccID, creAccID) values(?, ?, ?)";
+//			PreparedStatement ps = connection.prepareStatement(sql);
+//			ps.setDouble(2, amount);
+//			ps.setString(3, fromAccount.getId());
+//			ps.setString(4, toAccount.getId());
+//			ps.execute();
+//			System.out.println("Transaction Updated......");
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (connection != null) {
+//				try {
+//					connection.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+//	}
 }
