@@ -49,11 +49,11 @@ public class TransactionServiceImpl implements TransactionService {
 		accountRepository.update(fromAccount);
 		accountRepository.update(toAccount);
 
-		Transaction debitTransaction = new Transaction(amount, TransactionType.DEBIT);
-		debitTransaction.setAccount(fromAccount);
-
-		Transaction creditTransaction = new Transaction(amount, TransactionType.CREDIT);
-		creditTransaction.setAccount(toAccount);
+//		Transaction debitTransaction = new Transaction(amount);
+//		debitTransaction.setAccount(fromAccount);
+//
+//		Transaction creditTransaction = new Transaction(amount);
+//		creditTransaction.setAccount(toAccount);
 		
 		TransactionRepository.save(amount, fromAccount, toAccount);
 		// TransactionRepository.save(creditTransaction)

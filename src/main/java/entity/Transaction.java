@@ -5,13 +5,17 @@ public class Transaction {
 	private int id;
 	private double amount;
 //	private LocalDateTime dateTime;
-	private TransactionType type;
-	private Account account;
+	private String debAccID;
+	private String creAccID;
+	
 
-	public Transaction(double amount, TransactionType type) {
+	public Transaction(double amount) {
 		super();
 		this.amount = amount;
-		this.type = type;
+	}
+
+	public Transaction() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
@@ -30,20 +34,28 @@ public class Transaction {
 		this.amount = amount;
 	}
 
-	public TransactionType getType() {
-		return type;
+	public String getDebAccID() {
+		return debAccID;
 	}
 
-	public void setType(TransactionType type) {
-		this.type = type;
+	public void setDebAccID(String debAccID) {
+		this.debAccID = debAccID;
 	}
 
-	public Account getAccount() {
-		return account;
+	public String getCreAccID() {
+		return creAccID;
 	}
 
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setCreAccID(String creAccID) {
+		this.creAccID = creAccID;
 	}
+
+	@Override
+	public String toString() {
+		return "Transaction [id=" + id + "     amount=" + amount + "     debAccID=" + debAccID + "     creAccID=" + creAccID
+				+ "]";
+	}
+
+	
 
 }
