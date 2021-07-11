@@ -1,5 +1,6 @@
 package project0;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,11 +25,16 @@ public class AccountTransactionApp {
 		TransactionService txrService = new TransactionServiceImpl(accountRepository);
 		TransactionRepository tr = new JdbcTransactionRepository();
 
-		txrService.transfer(100.00, "2", "3");
+//		txrService.transfer(100.00, "2", "3");
 //		txrService.transfer(100.00, "1", "4");
 //		txrService.transfer(100.00, "1", "5");
+		
+		
 
 		List<Transaction> transactions = tr.findByCount(5, "2");
+		
+//		List<Transaction> transactions = tr.findByDateRange(LocalDate.of(2021, 7, 11), LocalDate.of(2021, 7, 11), "2");
+		
 		for (Transaction transaction : transactions) {
 			System.out.println(transaction);
 		}

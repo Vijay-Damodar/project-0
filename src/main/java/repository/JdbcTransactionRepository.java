@@ -64,8 +64,41 @@ public class JdbcTransactionRepository implements TransactionRepository {
 	}
 
 	public List<Transaction> findByDateRange(LocalDate fromDate, LocalDate toDate, String accNum) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Transaction> transactions = new ArrayList<>();
+
+		Connection connection = null;
+		try {
+			connection = ConnectionFactory.getConnection();
+
+			String sql = "select * from Transaction where debAccID=" + accNum+ " and dateTime between '2021-07-11 18:22:37' and '2021-07-11 18:52:44'";
+			PreparedStatement ps = connection.prepareStatement(sql);
+		
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Transaction transaction = new Transaction();
+				transaction.setDebAccID(rs.getString("creAccID"));
+				transaction.setAmount(rs.getDouble(2));
+				transaction.setId(rs.getInt(1));
+				transaction.setCreAccID(accNum);
+				transaction.setDateTime(rs.getTimestamp(5));	
+				transactions.add(transaction);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return transactions;
 	}
 
 //	@Override
