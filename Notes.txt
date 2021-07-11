@@ -4,17 +4,17 @@
 ---------------------------------------------------------
 Account
 ---------------------------------------------------------
-number             ==> int
+num            ==> string
 balance  		    ==> double
 
 
 ---------------------------------------------------------
 Transaction
 ---------------------------------------------------------
-id						==>int
-date-time			==>datetime
+id						==>int    AI    PK
 amount             ==>double
-debit/credit       ==>boolean
+debAccID        ==> String    FK
+creAccID         ==> String    FK
 
 
 
@@ -34,5 +34,10 @@ repository
 				->JdbcTransactionRepository
 				->AccountRepository
 				->TransactionRepository
-				->DurationFilter
 				
+	
+service
+				->AccountBalanceException
+				->AccountNotFoundException
+				->TransactionService
+				->TransactionServiceImpl
