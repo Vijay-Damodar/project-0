@@ -4,17 +4,14 @@ public class Transaction {
 
 	private int id;
 	private double amount;
-	private boolean creditdebit;
-	private int fromAcc;
-	private int toAcc;
+//	private LocalDateTime dateTime;
+	private TransactionType type;
+	private Account account;
 
-	public Transaction(int id, double amount, boolean creditdebit, int fromAcc, int toAcc) {
+	public Transaction(double amount, TransactionType type) {
 		super();
-		this.id = id;
 		this.amount = amount;
-		this.creditdebit = creditdebit;
-		this.fromAcc = fromAcc;
-		this.toAcc = toAcc;
+		this.type = type;
 	}
 
 	public int getId() {
@@ -33,34 +30,20 @@ public class Transaction {
 		this.amount = amount;
 	}
 
-	public boolean isCreditdebit() {
-		return creditdebit;
+	public TransactionType getType() {
+		return type;
 	}
 
-	public void setCreditdebit(boolean creditdebit) {
-		this.creditdebit = creditdebit;
+	public void setType(TransactionType type) {
+		this.type = type;
 	}
 
-	public int getFromAcc() {
-		return fromAcc;
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setFromAcc(int fromAcc) {
-		this.fromAcc = fromAcc;
-	}
-
-	public int getToAcc() {
-		return toAcc;
-	}
-
-	public void setToAcc(int toAcc) {
-		this.toAcc = toAcc;
-	}
-
-	@Override
-	public String toString() {
-		return "Transaction [id=" + id + ", amount=" + amount + ", creditdebit=" + creditdebit + ", fromAcc=" + fromAcc
-				+ ", toAcc=" + toAcc + "]";
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 }

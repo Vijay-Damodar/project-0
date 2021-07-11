@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 // Factory class
-public class ConnectionFactory {
+public class  ConnectionFactory {
 
 	private static Properties properties = new Properties();
 

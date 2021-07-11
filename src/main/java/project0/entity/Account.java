@@ -2,12 +2,12 @@ package project0.entity;
 
 public class Account {
 
-	private int id;
+	private String num;
 	private double balance;
 
-	public Account(int id, double balance) {
+	public Account(String num, double balance) {
 		super();
-		this.id = id;
+		this.num = num;
 		this.balance = balance;
 	}
 
@@ -15,12 +15,12 @@ public class Account {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public String getId() {
+		return num;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String id) {
+		this.num = id;
 	}
 
 	public double getBalance() {
@@ -33,7 +33,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", balance=" + balance + "]";
+		return "Account [id=" + num + ", balance=" + balance + "]";
 	}
 
 }

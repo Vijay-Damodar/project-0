@@ -1,21 +1,15 @@
-create database account_transaction;
+create database accounts_db;
 
-use account_transaction;
+use accounts_db;
 
 create table accounts(
-id int primary key auto_increment,
+num varchar(255) primary key,
 balance double check (balance > 0) );
 
-create table transactions(
-id int primary key auto_increment,
-date_time datetime,
-amount double check (amount>0),
-debit_credit boolean,
-from_acc int,
-to_acc int,
-foreign key (from_acc) references accounts(id),
-foreign key (to_acc) references accounts(id)
-);
+insert into accounts values("1", 10000.0);
+insert into accounts values("2", 10000.0);
+insert into accounts values("3", 10000.0);
+insert into accounts values("4", 10000.0);
+insert into accounts values("5", 10000.0);
 
-
-
+select * from accounts;
