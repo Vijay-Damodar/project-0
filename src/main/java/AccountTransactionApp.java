@@ -24,7 +24,7 @@ public class AccountTransactionApp {
 		TransactionService txrService = new TransactionServiceImpl(accountRepository);
 		TransactionRepository tr = new JdbcTransactionRepository();
 
-//		txrService.transfer(100.00, "1", "3");
+		txrService.transfer(100.00, "1", "3");
 //		txrService.transfer(100.00, "1", "4");
 //		txrService.transfer(100.00, "1", "5");
 

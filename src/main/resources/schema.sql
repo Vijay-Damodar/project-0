@@ -48,3 +48,6 @@ insert into transaction(amount, debAccID, creAccID) values(100.0, "1", "2");
 
 
 select * from transaction;
+
+alter table transaction 
+add dateTime datetime;
