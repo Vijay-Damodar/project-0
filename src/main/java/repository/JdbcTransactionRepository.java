@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class JdbcTransactionRepository implements TransactionRepository {
 				transaction.setAmount(rs.getDouble(2));
 				transaction.setId(rs.getInt(1));
 				transaction.setCreAccID(accNum);
+				transaction.setDateTime(rs.getTimestamp(5));	
 				transactions.add(transaction);
 			}
 
@@ -57,7 +59,7 @@ public class JdbcTransactionRepository implements TransactionRepository {
 	}
 
 	public List<Transaction> findByMonth(int count, String accNum) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

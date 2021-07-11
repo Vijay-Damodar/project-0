@@ -21,6 +21,8 @@ public interface TransactionRepository {
 			java.util.Date date = new  Date();
 			String sql = "insert into transaction(amount, debAccID, creAccID,dateTime) values(?, ?, ?, ?)";
 			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			
 			ps.setDouble(1, amount);
 			ps.setString(2, fromAccount.getId());
 			ps.setString(3, toAccount.getId());

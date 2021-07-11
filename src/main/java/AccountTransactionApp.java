@@ -24,11 +24,11 @@ public class AccountTransactionApp {
 		TransactionService txrService = new TransactionServiceImpl(accountRepository);
 		TransactionRepository tr = new JdbcTransactionRepository();
 
-		txrService.transfer(100.00, "1", "3");
+		txrService.transfer(100.00, "2", "3");
 //		txrService.transfer(100.00, "1", "4");
 //		txrService.transfer(100.00, "1", "5");
 
-		List<Transaction> transactions = tr.findByCount(5, "1");
+		List<Transaction> transactions = tr.findByCount(5, "2");
 		for (Transaction transaction : transactions) {
 			System.out.println(transaction);
 		}

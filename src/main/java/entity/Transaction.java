@@ -1,5 +1,7 @@
 package project0.entity;
 
+import java.sql.Timestamp;
+
 public class Transaction {
 
 	private int id;
@@ -7,11 +9,19 @@ public class Transaction {
 //	private LocalDateTime dateTime;
 	private String debAccID;
 	private String creAccID;
-	
+	private Timestamp dateTime;
 
 	public Transaction(double amount) {
 		super();
 		this.amount = amount;
+	}
+
+	public Timestamp getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(Timestamp dateTime) {
+		this.dateTime = dateTime;
 	}
 
 	public Transaction() {
@@ -52,10 +62,11 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + "     amount=" + amount + "     debAccID=" + debAccID + "     creAccID=" + creAccID
-				+ "]";
+		return "Transaction [id=" + id + ", amount=" + amount + ", debAccID=" + debAccID + ", creAccID=" + creAccID
+				+ ", dateTime=" + dateTime + "]";
 	}
 
+	
 	
 
 }
